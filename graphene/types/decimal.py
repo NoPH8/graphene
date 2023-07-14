@@ -15,7 +15,7 @@ class Decimal(Scalar):
 
     @staticmethod
     def serialize(dec):
-        if isinstance(dec, str):
+        if isinstance(dec, (str, int, float)):
             dec = _Decimal(dec)
         assert isinstance(
             dec, _Decimal
